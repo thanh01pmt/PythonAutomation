@@ -3,6 +3,9 @@ import glob
 import re
 
 def remove_absolute_positioning_attributes(html):
+    """
+    This function removes style attributes with absolute positioning and individual absolute positioning attributes from the given html string.
+    """
     # Remove style attributes with absolute positioning
     html = re.sub(r'style="[^"]*position:absolute[^"]*"', '', html)
     # Remove individual absolute positioning attributes
@@ -13,7 +16,12 @@ def remove_absolute_positioning_attributes(html):
     return html
 
 def combine_xhtml_files(directory, output_file):
+    """
+    This function combines all xhtml files in the given directory into a single file, while removing absolute positioning attributes and applying custom styles.
+    """
     xhtml_files = glob.glob(os.path.join(directory, "*.xhtml"))
+    # Sort the file names in ascending order
+    xhtml_files.sort()
     with open(output_file, "w") as outfile:
         outfile.write('<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Combined XHTML</title>\n')
         outfile.write('<link rel="stylesheet" href="css/book.css" type="text/css"></link>\n<script src="js/book.js"></script>\n')
