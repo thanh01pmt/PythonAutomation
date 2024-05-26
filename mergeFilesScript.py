@@ -41,6 +41,6 @@ def combine_xhtml_files(directory, output_file):
 
 # Example usage:
 directory = "/Users/tonypham/Documents/Books/OPS"
-output_file = directory + "/glossary.html"
+output_file = directory + "/unit2.html"
 # output_file = "combined1.html"
 combine_xhtml_files(directory, output_file)
