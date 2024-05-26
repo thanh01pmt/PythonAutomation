@@ -4,7 +4,7 @@ import re
 
 def get_file_list(directory, start_number, end_number):
     file_list = []
-    for i in range(start_number, end_number + 1):
+    for i in range(start_number, end_number):
         file_name = f'page-{i}.xhtml'
         file_path = os.path.join(directory, file_name)
         file_list.append(file_path)
@@ -55,7 +55,7 @@ def process_split_index(split_index, directory):
 directory = "/Users/tonypham/Documents/Books/OPS"
 base_name = "unit2"
 output_name = ""
-split_index = [175,309,431]
+split_index = [175,310,431]
 
 input_files = process_split_index(split_index, directory)
 
