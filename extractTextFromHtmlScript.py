@@ -46,7 +46,13 @@ def extract_text_from_all_tags(html_content):
     return text.strip()
 
 # Example usage:
-with open('./SampleFiles/page-2.xhtml', 'r') as f:
+
+filePath = '/Users/tonypham/Documents/Books/OPS/unit2.html'
+with open(filePath, 'r') as f:
     html_content = f.read()
     text = extract_text_from_all_tags(html_content)
     print('Text:', text)
+    # Mở file với chế độ ghi ('w')
+    with open(filePath + '.txt', 'w') as f:
+        # Ghi nội dung text vào file
+        f.write(text)

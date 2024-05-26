@@ -22,4 +22,4 @@ def html_to_markdown(html_file):
     with open(html_file + '.md', 'w') as f:
         f.write(markdown_content)
 
-html_to_markdown('./SampleFiles/page-2.xhtml')
+html_to_markdown('/Users/tonypham/Documents/Books/OPS/unit2.html')
