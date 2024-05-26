@@ -47,7 +47,7 @@ def extract_text_from_all_tags(html_content):
 
 # Example usage:
 
-filePath = '/Users/tonypham/Documents/Books/OPS/glossary.html'
+filePath = '/Users/tonypham/Documents/Books/OPS/unit3_3.html'
 with open(filePath, 'r') as f:
     html_content = f.read()
     text = extract_text_from_all_tags(html_content)

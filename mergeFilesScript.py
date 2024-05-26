@@ -11,6 +11,7 @@ def remove_absolute_positioning_attributes(html):
     # Remove individual absolute positioning attributes
     html = re.sub(r'left:[^;]+;', '', html)
     html = re.sub(r'top:[^;]+;', '', html)
+    html = re.sub(r'<img[^>]*alt="[^"]{40,}"[^>]*>', '', html)
     # html = re.sub(r'width:[^;]+;', '', html)
     # html = re.sub(r'height:[^;]+;', '', html)
     return html
@@ -41,6 +42,6 @@ def combine_xhtml_files(directory, output_file):
 
 # Example usage:
 directory = "/Users/tonypham/Documents/Books/OPS"
-output_file = directory + "/glossary.html"
+output_file = directory + "/fundamentals.html"
 # output_file = "combined1.html"
 combine_xhtml_files(directory, output_file)

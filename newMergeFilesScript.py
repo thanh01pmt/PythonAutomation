@@ -10,6 +10,19 @@ def get_file_list(directory, start_number, end_number):
         file_list.append(file_path)
     return file_list
 
+# def remove_absolute_positioning_attributes(html):
+#     """
+#     This function removes style attributes with absolute positioning and individual absolute positioning attributes from the given html string.
+#     """
+#     # Remove style attributes with absolute positioning
+#     html = re.sub(r'style="[^"]*position:absolute[^"]*"', '', html)
+#     # Remove individual absolute positioning attributes
+#     html = re.sub(r'left:[^;]+;', '', html)
+#     html = re.sub(r'top:[^;]+;', '', html)
+#     # html = re.sub(r'width:[^;]+;', '', html)
+#     # html = re.sub(r'height:[^;]+;', '', html)
+#     return html
+
 def remove_absolute_positioning_attributes(html):
     """
     This function removes style attributes with absolute positioning and individual absolute positioning attributes from the given html string.
@@ -19,8 +32,11 @@ def remove_absolute_positioning_attributes(html):
     # Remove individual absolute positioning attributes
     html = re.sub(r'left:[^;]+;', '', html)
     html = re.sub(r'top:[^;]+;', '', html)
-    # html = re.sub(r'width:[^;]+;', '', html)
-    # html = re.sub(r'height:[^;]+;', '', html)
+    # Remove img tags with specific src
+    html = re.sub(r'<img[^>]*alt="[^"]{40,}"[^>]*>', '', html)
+    # html = re.sub(r'<img src="images/image-27.png"[^>]*>', '', html)
+    # html = re.sub(r'<img src="images/image-87\d+\.png"[^>]*>', '', html)
+    # html = re.sub(r'<img src="images/fill-image-\d+\.png"[^>]*>', '', html)
     return html
 
 def combine_xhtml_files(directory, files, output_name):
@@ -53,9 +69,11 @@ def process_split_index(split_index, directory):
 
 # Example usage:
 directory = "/Users/tonypham/Documents/Books/OPS"
-base_name = "unit2"
+base_name = "unit3"
 output_name = ""
-split_index = [175,310,431]
+split_index = [432,526,591,662]
+
+
 
 input_files = process_split_index(split_index, directory)
 
@@ -63,4 +81,9 @@ input_files = process_split_index(split_index, directory)
 for files in input_files:
     output_name = f"{base_name}_{input_files.index(files) + 1}.html"
     combine_xhtml_files(directory, files, output_name)
+
+
+
+
+
 
